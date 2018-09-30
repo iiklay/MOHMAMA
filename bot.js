@@ -43,7 +43,7 @@ client.on('message', message => {
                     +move | لسحب شخص لعندك
                     +role | لاعطاء شخص  رتبه
                     +bc | برودكستات
-                    +cc **`,`**🎶 Music Commands
+                    +cc | لانشاء الوان**`,`**🎶 Music Commands
                                    +play <name>
                                    +skip
                                    +vol <number>
