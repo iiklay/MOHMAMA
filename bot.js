@@ -12,6 +12,7 @@ client.on('message', msg => {
 });
 
 client.on('message', message => {//help msg
+ var prefix = "+";
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
       message.react("☑")            
