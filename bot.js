@@ -1513,7 +1513,7 @@ client.on('message', async message => {
             limit: msg
           }).then(m => {
             message.channel.bulkDelete(m).then(() => {
-            message.channel.send(`${message.author},\n\`\`\`تم مسح الرسائل بنجاح\`\`\``).then(msg => {
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
               msg.delete(3000);
                   });
             });
