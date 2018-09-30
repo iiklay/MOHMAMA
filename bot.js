@@ -92,11 +92,10 @@ message.guild.members.forEach(m => {
  
 });
 client.on('message', msg => {
-  var prefix = '+';
 	if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) 
+  if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
-  command = command.slice(prefix.length);
+  command  command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
 
     if(command === "مسح") {
