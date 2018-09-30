@@ -39,7 +39,8 @@ client.on('message', message => {
                     +ban
                     +mute
                     +unmute
-                    +server**`,`**🎶 Music Commands
+                    +server
+                    +move  **`,`**🎶 Music Commands
                                    +play <name>
                                    +skip
                                    +vol <number>
