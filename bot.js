@@ -1501,9 +1501,9 @@ if (message.content.startsWith(prefix + 'clear')) {
         if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | I dont have **MANAGE_MESSAGES** Permission!');
  let args = message.content.split(" ").slice(1)
     let messagecount = parseInt(args);
-    if(!messagecount) args = '1000';
+    if(!messagecount) args = '100';
     message.channel.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
-    message.channel.send(`\`${args}\` : __عدد الرسائل التي تم مسحها __ `).then(messages => messages.delete(5000));
+    message.channel.send(````\`${args}\` : __عدد الرسائل التي تم مسحها __ ````).then(messages => messages.delete(5000));
   }
   });
 
