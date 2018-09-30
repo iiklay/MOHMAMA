@@ -1444,7 +1444,6 @@ var mentionned = message.mentions.members.first();
 
 
 
-const Discord = require('discord.js');
 client.on('message', message =>{
   let args = message.content.split(" ").slice(1).join(" ");
   if(message.content.startsWith('+colors')) {
@@ -1487,6 +1486,9 @@ client.on('message', message =>{
 
 
   
+
+
+
 
 
 
