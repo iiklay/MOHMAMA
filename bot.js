@@ -1503,7 +1503,7 @@ if (message.content.startsWith(prefix + 'clear')) {
     let messagecount = parseInt(args);
     if(!messagecount) args = '100';
     message.channel.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
-    message.channel.send(````\`${args}\` : __عدد الرسائل التي تم مسحها __ ````).then(messages => messages.delete(5000));
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
   }
   });
 
