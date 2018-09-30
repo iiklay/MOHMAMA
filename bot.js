@@ -91,13 +91,24 @@ message.guild.members.forEach(m => {
   }
  
 });
+client.on("message", (message) => {
+    if (message.content.startsWith('+delet')) {
+        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+
+        let args = message.content.split(' ').slice(1);
+        let channel = message.client.channels.find('name', args.join(' '));
+        if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
+        channel.delete()
+    }
+});  
 client.on('message', msg => {
-	if (msg.author.bot) return;
+  if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
+  command = command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
 
-    if(command === "مسح") {
+    if(command === "+مسح") {
         const emoji = client.emojis.find("name", "wastebasket")
     let textxt = args.slice(0).join("");
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
