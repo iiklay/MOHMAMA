@@ -685,6 +685,49 @@ function play(guild, song) {
 
 
 
+client.on('message', message => { 
+var prefix = "+";
+
+if (message.author.boss) return;
+if (!message.content.startsWith(prefix)) return;
+let command = message.content.split(" ")[0];
+command = command.slice(prefix.length);
+if (command == "role") {
+if (!message.channel.guild) return;
+if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return message.reply("**🚫انت لا تملك صلاحيات **").then(msg => msg.delete(5000));;
+if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+let MRole = message.content.split(" ")[1];
+if(!MRole)return message.reply("+role @klay admin").then(msg => {msg.delete(5000)});
+message.guild.members.forEach(m => {
+m.addRole(message.guild.roles.find('name', MRole))
+})
+message.reply('*** Done ✅  ***').then(msg => {msg.delete(10000)});
+}
+});
+
+client.on('message', message => { 
+var prefix = "+";
+
+if (message.author.boss) return;
+if (!message.content.startsWith(prefix)) return;
+let command = message.content.split(" ")[0];
+command = command.slice(prefix.length);
+if (command == "roleremove") {
+if (!message.channel.guild) return;
+if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return message.reply("**🚫انت لا تملك صلاحيات **").then(msg => msg.delete(5000));;
+if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+let MRole = message.content.split(" ")[1];
+if(!MRole)return message.reply("+roleremove @klay admin").then(msg => {msg.delete(5000)});
+message.guild.members.forEach(m => {
+m.removeRole(message.guild.roles.find('name', MRole))
+})
+message.reply('*** Done ✅  ***').then(msg => {msg.delete(10000)});
+}
+});
+
+
+
+
 
 
 
