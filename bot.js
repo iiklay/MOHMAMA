@@ -55,5 +55,5 @@ By :<@427802430701436928> | __**شكرا لكم لاستعمال البوت**__
 
 }
 });
-  
-client.login('token'); 
+ client.login(process.env.BOT_TOKEN);
+
