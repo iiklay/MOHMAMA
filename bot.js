@@ -57,7 +57,8 @@ client.on('message', message => {
                                                   +invite | لاضافة البوت لسيرفرك
                                                   +صراحه 
                                                   +user   | هويتك
-                                                  +speed | سرعة كتابه **`]
+                                                  +speed | سرعة كتابه 
+                                                  +حكم **`]
         let page = 1;
  
     let embed = new Discord.RichEmbed()
