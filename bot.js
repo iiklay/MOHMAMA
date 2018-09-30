@@ -1504,7 +1504,6 @@ client.on('ready', () => {
     client.user.setStatus("dnd")
 });
 let points = JSON.parse(fs.readFileSync('./lgz/typePTS.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاط
-const prefix = "+"; 
 ///by ™¦༺♚ƙἶղց|MaS♚༺¦™#9506
 
 client.on('message', message => {
@@ -1523,7 +1522,7 @@ const filter = response => { // في هذا السطر يقوم بصنع فلت�
 message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').then(msg => {
 	let embed = new Discord.RichEmbed()
 	.setColor('#000000')
-	.setFooter(" ة مجموع نقاطك  |بوت لغز", 'https://c.top4top.net/p_814rjkod1.png')
+	.setFooter(" ELDER BOT مجموع نقاطك  |بوت ", 'https://c.top4top.net/p_814rjkod1.png')
 	.setDescription(`**قم بكتابة : ${item.type}**`) // ${item.type} = السؤال
 	///by ™¦༺♚ƙἶղց|MaS♚༺¦™#9506
 
