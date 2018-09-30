@@ -230,6 +230,5 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
   }
 
 });
-مدري جربها
 client.login(process.env.BOT_TOKEN);
 
