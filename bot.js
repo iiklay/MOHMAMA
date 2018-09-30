@@ -53,9 +53,18 @@ client.on('message', message => {//help msg
 By :<@427802430701436928> | __**شكرا لكم لاستعمال البوت**__
 }
 });
+client.on('message', message => {
+   
+    let args = message.content.split(' ').slice(1).join(' ');
+   
+  if (message.content === 'ping') {
+      message.channel.send(`<@${message.author.id}> Ping..!`)
+  }
+ 
+ 
   if (message.content.startsWith('+bc')) {
           if (!args[0]) {
-message.channel.send("**```+bc <message>```**");
+message.channel.send("**+bc <message>**");
 return;
 }
 message.guild.members.forEach(m => {
@@ -64,6 +73,8 @@ message.guild.members.forEach(m => {
  
 });
   }
+ 
+});
 client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
