@@ -1,9 +1,9 @@
- const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` +helps | +inv  `,"http://twitch.tv/S-F")
+client.user.setGame(` اكتب اي شي هنا  `,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -27,6 +27,7 @@ client.user.setGame(` +helps | +inv  `,"http://twitch.tv/S-F")
   console.log('')
 });
 
+
 client.on('message', msg => {
   if (msg.content === 'ping') {
     msg.reply('Pong!');
@@ -40,72 +41,43 @@ client.on('message', message => {
   if (message.content === 'ping') {
   }
  
- client.on ('message', Sal => {
-    if (Sal.content === '+helps') {
+	client.on('guildMemberAdd', Sal => { //By Salto7#4595
     var embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-    .setDescription(`
-      || جميع الاوامر في البوت || All Cmd In This Bot ||
-      اوامر العامه || +help-member
-      اوامر الاداره || +help-admin
-      اوامر اللعاب || +help-games
-      `)
-      Sal.channel.sendEmbed(embed)
-    }
+    .setAuthor(Sal.user.username, Sal.user.avatarURL)
+    .setThumbnail(Sal.user.avatarURL)
+    .setTitle('عضو جديد!')
+    .setDescription('مرحبا بك بالسيرفر')
+    .addField('``ايدي العضو``:',"" +  Sal.user.id, true)
+    .addField('``تاق العضو``', Sal.user.discriminator, true)
+    .addField('``تم الانشاء في``', Sal.user.createdAt, true)
+    .addField(' :bust_in_silhouette:  انت رقم',`**[ ${Sal.guild.memberCount} ]**`,true)
+    .setColor('RANDOM')
+    .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
+    var channel =Sal.guild.channels.find('name', 'welcome-out') // هنا حط اسم الروم الي تبيه يكتب فيه
+    if (!channel) return;
+    channel.send({embed : embed});
     });
-    
-    //Member
-    client.on ('message', Sal => {
-      if (Sal.content === '+help-member') {
-      var embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-      .setDescription(`
-      || اوامر العامه || Cmd Member ||
-      +avatar l يعرضلك صورت حسابك
-      +server l يعرضلك معلموات عن السيرفر
-      +myrole l يعرضلك رتبتك
-      +roles l يعرضلك كل الروتبه في السيرفر
-      +bot l يعرضلك معلموت البوت
-      +id l يعرضلك معلموتك
-        `)
-        Sal.channel.sendEmbed(embed)
-      }
-      });
-    
-      //Admin
-      client.on ('message', Sal => {
-        if (Sal.content === '+help-admin') {
-        var embed = new Discord.RichEmbed()
-          .setColor('RANDOM')
-        .setDescription(`
-        || اوامر الادراه || Cmd Admin ||
-      +bc <message>  l لي ارسال رسالة لي كل الاعضاء
-      +ban <mention> l لاعطاء الشخص حضر
-      +kick <mention > l لاعطاء الشخص طرد
-      +clear l لمسح الشات
-      +mute <mention> l لاعطاء الشخص ميوت
-      +unmute <mention> 
-          `)
-          Sal.channel.sendEmbed(embed)
-        }
-        });
-      
-        //Games
-        client.on ('message', Sal => {
-          if (Sal.content === '+help-games') {
-          var embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-          .setDescription(`
-          || اوامر اللعاب || Cmd Games ||
-          +لبدء لعبه مريم  
-          +لو خيروك l لبدء لعبه لو خيروك
-          +صراحه l لبدء لعبه صراحه
-          +كت تويت l لبدء لعبه كت تويت
-          + اكس او l لبدء لعبه اكس او  
-            `)
-            Sal.channel.sendEmbed(embed)
-          }
-          });
+	
+	client.on('guildMemberRemove', Sal => { //By Salto7#4595
+  var embed = new Discord.RichEmbed()
+  .setAuthor(Sal.user.username, Sal.user.avatarURL)
+  .setThumbnail(Sal.user.avatarURL)
+  .setTitle('خرج عضو')
+  .setDescription('الله معك مع السلامه')
+  .addField('``ايدي العضو``:',"" +  Sal.user.id, true)
+  .addField('``تاق العضو``', Sal.user.discriminator, true)
+  .addField('``تم الانشاء في``', Sal.user.createdAt, true)
+  .addField(' :bust_in_silhouette: الان ',`**[ ${Sal.guild.memberCount} ]**`,true)
+  .setColor('RED')
+  .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
+  var channel =Sal.guild.channels.find('name', 'welcome-out') // هنا حط اسم الروم الي تبيه يكتب فيه
+  if (!channel) return;
+  channel.send({embed : embed});
+  });
+	
+	
+	
+	
   if (message.content.startsWith('+bc')) {
           if (!args[0]) {
 message.channel.send("**+bc <message>**");
