@@ -1473,18 +1473,26 @@ message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').the
           .catch(collected => { // في حال لم يقم أحد بالإجابة
             message.channel.send(`:x: **لم يقم أحد بكتابة الجملة بالوقت المناسب**`);
 			console.log(`[Typing] Error: No one type the word.`);
-          })
+})
 		})
 	})
 }
 });
-
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'نقاطي')) {
+	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+	let userData = points[message.author.id];
+	let embed = new Discord.RichEmbed()
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+	.setColor('#000000')
+	.setFooter("بوت سرعة الكتابة", '')
+	.setDescription(`نقاطك: \`${userData.points}\``)
+	message.channel.sendEmbed(embed)
   }
   fs.writeFile("./typePTS.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   })
 });
-
 
 
 
