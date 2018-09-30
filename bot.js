@@ -1455,6 +1455,7 @@ client.on('message', message =>{
       }
       return hex;
   }
+	 
   let color = args.join(' ');
   if(message.content.includes('convert')) {
     let colorStringToConvert = message.content.slice('u!hexcol convert ').split(' ');
