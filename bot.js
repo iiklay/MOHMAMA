@@ -285,7 +285,7 @@ client.on('message' , message => {
  
 client.on("message", message => {
   const command = message.content.split(" ")[0];
-  if (command === "b-mute") {
+  if (command === "+mute") {
           if(!message.channel.guild) return message.reply('**:x: Sorry But This Command is only for servers **');
                   if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   const user = message.mentions.users.first();
@@ -313,7 +313,7 @@ client.on("message", message => {
   }
  
 };
-    if (command === "b-unmute") {
+    if (command === "+unmute") {
           if(!message.channel.guild) return message.reply('**:x: Sorry But This Command is only for servers **');        
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **");
   const user = message.mentions.users.first();
