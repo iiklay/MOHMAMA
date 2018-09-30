@@ -58,7 +58,6 @@ client.on('message', message => {
     let args = message.content.split(' ').slice(1).join(' ');
    
   if (message.content === 'ping') {
-      message.channel.send(`<@${message.author.id}> Ping..!`)
   }
  
  
