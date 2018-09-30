@@ -120,7 +120,8 @@ message.guild.members.forEach(m => {
  
 });
 client.on('message', msg => {
-  if (msg.author.bot) return;
+  var prefix = '+';
+	if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
   command = command.slice(prefix.length);
