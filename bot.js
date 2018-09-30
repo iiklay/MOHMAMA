@@ -53,8 +53,9 @@ client.on('message', message => {
       Sal.channel.sendEmbed(embed)
     }
     });
- 
- client.on ('message', Sal => {
+    
+    //Member
+    client.on ('message', Sal => {
       if (Sal.content === '+help-member') {
       var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -70,8 +71,9 @@ client.on('message', message => {
         Sal.channel.sendEmbed(embed)
       }
       });
- 
- client.on ('message', Sal => {
+    
+      //Admin
+      client.on ('message', Sal => {
         if (Sal.content === '+help-admin') {
         var embed = new Discord.RichEmbed()
           .setColor('RANDOM')
@@ -87,22 +89,23 @@ client.on('message', message => {
           Sal.channel.sendEmbed(embed)
         }
         });
- 
- client.on ('message', Sal => {
+      
+        //Games
+        client.on ('message', Sal => {
           if (Sal.content === '+help-games') {
           var embed = new Discord.RichEmbed()
             .setColor('RANDOM')
           .setDescription(`
           || اوامر اللعاب || Cmd Games ||
-         +لبدء لعبه مريم
-          -لو خيروك l لبدء لعبه لو خيروك
-          -صراحه l لبدء لعبه صراحه
-          -كت تويت l لبدء لعبه كت تويت
-          - اكس او l لبدء لعبه اكس او  
+          +لبدء لعبه مريم  
+          +لو خيروك l لبدء لعبه لو خيروك
+          +صراحه l لبدء لعبه صراحه
+          +كت تويت l لبدء لعبه كت تويت
+          + اكس او l لبدء لعبه اكس او  
             `)
             Sal.channel.sendEmbed(embed)
           }
- });
+          });
   if (message.content.startsWith('+bc')) {
           if (!args[0]) {
 message.channel.send("**+bc <message>**");
