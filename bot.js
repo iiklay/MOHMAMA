@@ -11,7 +11,7 @@ client.on('message', msg => {
   }
 });
 
- Rocket.on('message', message => {//help msg
+client.on('message', message => {//help msg
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
       message.react("☑")            
