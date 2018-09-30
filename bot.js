@@ -1497,49 +1497,72 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 
 
 
-
-
-
-client.on('message',function(message) {
-    let w = ['صخره','ورقة','مقص'];
-   if(message.content.startsWith(prefix + "rps")) {
-       message.channel.send(`\`\`\`css
-Choose one of the following.
-#1 ( صخره )
-#2 ( ورقة )
-#3 ( مقص )
-\`\`\`
-
-__امامك  5 توان للاختيار__`)
-.then(() => {
-  message.channel.awaitMessages(response => response.content === '1', {
-    max: 1,
-    time: 5000,
-    errors: ['time'],
-  })
-  .then((collected) => {
-      if(message.author !== message.author)return;
-     message.channel.send('🏵 ' + w[Math.floor(Math.random() * w.length)]);
-    });
+const client = new Discord.Client();
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`in ${client.guilds.size} servers `)
+    console.log(`[Users] ${client.users.size}`)
+    client.user.setStatus("dnd")
 });
-  message.channel.awaitMessages(response => response.content === '2', {
-    max: 1,
-    time: 5000,
-    errors: ['time'],
-  })
-  .then((collected) => {
-     message.channel.send('🏵 ' + w[Math.floor(Math.random() * w.length)]);
-    });
-      message.channel.awaitMessages(response => response.content === '3', {
-    max: 1,
-    time: 5000,
-    errors: ['time'],
-  })
-  .then((collected) => {
-     message.channel.send('🏵 ' + w[Math.floor(Math.random() * w.length)]);
-    });
-   } 
+let points = JSON.parse(fs.readFileSync('./lgz/typePTS.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاط
+const prefix = "+"; 
+///by ™¦༺♚ƙἶղց|MaS♚༺¦™#9506
+
+client.on('message', message => {
+if (!points[message.author.id]) points[message.author.id] = { // يقوم الكود تلقائياً في حال لم يجد نقاط العضو بإنشاء نقاط له ويتم إرسالها الملف المخصص
+	points: 0,
+  };
+if (message.content.startsWith(prefix + 'لغز')) { // .لغز
+	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+///by ™¦༺♚ƙἶղց|MaS♚༺¦™#9506
+
+const type = require('./lgz/nope.json'); // في هذا السطر يقوم الكود بقراءة ملف الأسئلة
+const item = type[Math.floor(Math.random() * type.length)]; // الأرراي المخصص للأسئلة
+const filter = response => { // في هذا السطر يقوم بصنع فلتر للأجوبة
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').then(msg => {
+	let embed = new Discord.RichEmbed()
+	.setColor('#000000')
+	.setFooter(" ة مجموع نقاطك  |بوت لغز", 'https://c.top4top.net/p_814rjkod1.png')
+	.setDescription(`**قم بكتابة : ${item.type}**`) // ${item.type} = السؤال
+	///by ™¦༺♚ƙἶղց|MaS♚༺¦™#9506
+
+	msg.channel.sendEmbed(embed).then(() => {
+        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+        .then((collected) => {
+		message.channel.send(`${collected.first().author} ✅ **لقد قمت بكتابة الكلمة بالوقت المناسب**`);
+		console.log(`[Typing] ${collected.first().author} typed the word.`);
+            let won = collected.first().author; // في هذا السطر يقوم الكود بسحب الأي دي الذي قام بالأجابة اولاً
+            points[won.id].points++;
+          })
+          .catch(collected => { // في حال لم يقم أحد بالإجابة
+            message.channel.send(`:x: **لم يقم أحد بكتابة الجملة بالوقت المناسب**`);
+			console.log(`[Typing] Error: No one type the word.`);
+          })
+		})
+	})
+}
 });
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'نقاطي')) {
+	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+	let userData = points[message.author.id];
+	let embed = new Discord.RichEmbed()
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+	.setColor('#000000')
+	.setFooter("لغز", 'https://c.top4top.net/p_814rjkod1.png')
+	.setDescription(`نقاطك: \`${userData.points}\``)
+	message.channel.sendEmbed(embed)
+  }
+  fs.writeFile("./lgz/typePTS.json", JSON.stringify(points), (err) => {
+    if (err) console.error(err)
+  })
+});
+
+
+
+
 
 
 
