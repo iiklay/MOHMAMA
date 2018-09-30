@@ -1494,6 +1494,18 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
   })
 });
 
+client.on('message', message => {       
+if (message.content.startsWith(prefix + 'clear')) { 
+    if(!message.channel.guild) return message.reply(':no_entry: | This Command For Servers Only!'); 
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | You dont have **MANAGE_MESSAGES** Permission!');
+        if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send(':no_entry: | I dont have **MANAGE_MESSAGES** Permission!');
+ let args = message.content.split(" ").slice(1)
+    let messagecount = parseInt(args);
+    if(!messagecount) args = '1000';
+    message.channel.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
+    message.channel.send(`\`${args}\` : __عدد الرسائل التي تم مسحها __ `).then(messages => messages.delete(5000));
+  }
+  });
 
 
 
