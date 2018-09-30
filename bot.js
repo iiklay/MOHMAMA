@@ -42,7 +42,8 @@ client.on('message', message => {
                     +server
                     +move 
                     +role 
-                    +bc**`,`**🎶 Music Commands
+                    +bc
+                    +cc **`,`**🎶 Music Commands
                                    +play <name>
                                    +skip
                                    +vol <number>
@@ -1338,39 +1339,61 @@ const Sra7a = [
 
 
 
-
-
-
-  client.on('message', message => {
-    if (message.content.startsWith(prefix + "هويتي")) {
-var args = message.content.split(" ").slice(1);
-let user = message.mentions.users.first();
-var men = message.mentions.users.first();
- var heg;
- if(men) {
-     heg = men
- } else {
-     heg = message.author
- }
-var mentionned = message.mentions.members.first();
-  var h;
- if(mentionned) {
-     h = mentionned
- } else {
-     h = message.member
- }
-        moment.locale('ar-TN');
-var id = new  Discord.RichEmbed()
-.setColor("RANDOM")
-.addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
-.addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true)
-.addField(": النك نيم",`${h.nickname}`, true) .addField(": #",heg.discriminator, true)
-.addField(`: البلينق`,`${h.presence.game && h.presence.game.name || '-'}`,true) .addField(': الحالة',`${h.presence.status}`,true)
-.addField(`: الرتب`, `${message.guild.members.get(h.id).roles.map(r => `\`${r.name}\``).slice(1).join('\n') || 'لايوجد رتب'}`,true)                                                    
-.setThumbnail(heg.avatarURL);
-message.channel.send(id)
-}   
+client.on('message', message => {
+          let args = message.content.split(' ').slice(1);
+   if(message.content.split(' ')[0] == '+color'){
+           const embedd = new Discord.RichEmbed()
+     .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+   .setDescription(`**لا يوجد لون بهذا الأسم ** :x: `)
+   .setColor(`ff0000`)
+ 
+    if(!isNaN(args) && args.length > 0)
+   
+ 
+if    (!(message.guild.roles.find("name",`${args}`))) return  message.channel.sendEmbed(embedd);
+ 
+ 
+       var a = message.guild.roles.find("name",`${args}`)
+                if(!a)return;
+const embed = new Discord.RichEmbed()
+                   
+     .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+   .setDescription(`**Done , تم تغير لونك . :white_check_mark: **`)
+ 
+   .setColor(`${a.hexColor}`)
+  message.channel.sendEmbed(embed);
+          if (!args)return;
+setInterval(function(){})
+                  let count = 0;
+                  let ecount = 0;
+        for(let x = 1; x < 201; x++){
+           
+            message.member.removeRole(message.guild.roles.find("name",`${x}`))
+         
+            }
+                message.member.addRole(message.guild.roles.find("name",`${args}`));
+       
+           
+    }
 });
+client.on('message', ra3d => {
+ 
+  if (ra3d.content ===  prefix + 'cc'){
+              if (!ra3d.member.hasPermission('MANAGE_ROLES')) return ra3d.channel.sendMessage('`**⚠ | `[MANAGE_ROLES]` لا يوجد لديك صلاحية**');
+              ra3d.channel.send("**✅ | يتم عمل الالوان**");
+                  setInterval(function(){})
+                    let count = 0;
+                    let ecount = 0;
+          for(let x = 1; x < 141; x++){
+            ra3d.guild.createRole({name:x,
+              color: 'RANDOM'})
+              }
+            }
+       });
+
+
+
+
   
 
 
