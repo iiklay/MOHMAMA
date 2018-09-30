@@ -1485,7 +1485,7 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 	let embed = new Discord.RichEmbed()
     .setAuthor(`${message.author.tag}`, message.author.avatarURL)
 	.setColor('#000000')
-	.setFooter("بوت سرعة الكتابة", '')
+	.setFooter("elder bot", '')
 	.setDescription(`نقاطك: \`${userData.points}\``)
 	message.channel.sendEmbed(embed)
   }
