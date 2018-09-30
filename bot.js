@@ -1240,14 +1240,8 @@ client.on('message', message => {
       return;
       }
       if ( message.content == prefix+'لو خيروك'){
-         
-          try{
-  //body
-  }catch(e){
- 
-  }
-
-
+   }
+});
 
 
 
