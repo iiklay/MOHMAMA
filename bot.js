@@ -56,7 +56,8 @@ client.on('message', message => {
                                                   +عواصم 
                                                   +invite | لاضافة البوت لسيرفرك
                                                   +صراحه 
-                                                  +user   | هويتك**`]
+                                                  +user   | هويتك
+                                                  +speed | سرعة كتابه **`]
         let page = 1;
  
     let embed = new Discord.RichEmbed()
@@ -1447,7 +1448,7 @@ client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = { // يقوم الكود تلقائياً في حال لم يجد نقاط العضو بإنشاء نقاط له ويتم إرسالها الملف المخصص
 	points: 0,
   };
-if (message.content.startsWith(prefix + 'سرعة')) { // .سرعة
+if (message.content.startsWith(prefix + 'speed')) { // .سرعة
 	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
 const type = require('./typing/type.json'); // في هذا السطر يقوم الكود بقراءة ملف الأسئلة
@@ -1458,7 +1459,7 @@ const filter = response => { // في هذا السطر يقوم بصنع فلت�
 message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').then(msg => {
 	let embed = new Discord.RichEmbed()
 	.setColor('#000000')
-	.setFooter("سرعة كتابة | لرؤية مجموع نقاطك اكتب $نقاطي |", 'https://c.top4top.net/p_814rjkod1.png')
+	.setFooter("سرعة كتابة | لرؤية مجموع نقاطك اكتب +نقاطي |", 'https://c.top4top.net/p_814rjkod1.png')
 	.setDescription(`**قم بكتابة : ${item.type}**`) // ${item.type} = السؤال
 	
 	msg.channel.sendEmbed(embed).then(() => {
@@ -1477,16 +1478,7 @@ message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').the
 	})
 }
 });
-client.on('message', message => {
-if (message.content.startsWith(prefix + 'نقاطي')) {
-	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
-	let userData = points[message.author.id];
-	let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-	.setColor('#000000')
-	.setFooter("ELDER BOT", '')
-	.setDescription(`نقاطك: \`${userData.points}\``)
-	message.channel.sendEmbed(embed)
+
   }
   fs.writeFile("./typePTS.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
