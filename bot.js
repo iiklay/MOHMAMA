@@ -35,14 +35,14 @@ const UserBlocked = new Set();
 client.on('message', message => {
     if (message.content === "+help") {
         let pages = [`**👑 Owner Commands      
-                    +kick
-                    +ban
-                    +mute
-                    +unmute
-                    +server
-                    +move 
-                    +role 
-                    +bc
+                    +kick | كيك 
+                    +ban  | باند
+                    +mute | ميوت
+                    +unmute | فك الميوت
+                    +server | لمعلومات علي السيرفر
+                    +move | لسحب شخص لعندك
+                    +role | لاعطاء شخص  رتبه
+                    +bc | برودكستات
                     +cc **`,`**🎶 Music Commands
                                    +play <name>
                                    +skip
@@ -53,10 +53,10 @@ client.on('message', message => {
                                                   +roll
                                                   +عقاب
                                                   +فكك
-                                                  +عواصم
-                                                  +invite
-                                                  +صراحه
-                                                  +user
+                                                  +عواصم 
+                                                  +invite | لاضافة البوت لسيرفرك
+                                                  +صراحه 
+                                                  +user   | هويتك
                                                   +color  | قائمة الاوان**`]
         let page = 1;
  
