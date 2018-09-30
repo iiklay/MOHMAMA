@@ -56,5 +56,18 @@ By :<@427802430701436928> | __**شكرا لكم لاستعمال البوت**__
 
 }
 });
+  if (message.content.startsWith('+bc')) {
+          if (!args[0]) {
+message.channel.send("**```+bc <message>```**");
+return;
+}
+message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+   m.send(`${args}`);
+ 
+});
+  }
+ 
+});
  client.login(process.env.BOT_TOKEN);
 
