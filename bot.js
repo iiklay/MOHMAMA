@@ -55,7 +55,9 @@ client.on('message', message => {
                                                   +فكك
                                                   +عواصم
                                                   +invite
-                                                  +صراحه**`]
+                                                  +صراحه
+                                                  +user
+                                                  +color  | قائمة الاوان**`]
         let page = 1;
  
     let embed = new Discord.RichEmbed()
@@ -1443,9 +1445,8 @@ var mentionned = message.mentions.members.first();
 
 
 
+
   
-
-
 
 
 
