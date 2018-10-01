@@ -1605,7 +1605,7 @@ client.on('message', function(message) {
 
 
 
-hero.on('message', message => {
+ client.on('message', message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
     if(message.content.toLowerCase().startsWith(prefix + "uptime")) {
