@@ -58,7 +58,8 @@ client.on('message', message => {
                                                   +صراحه 
                                                   +user   | هويتك
                                                   +speed | سرعة كتابه 
-                                                  +حكم **`]
+                                                  +حكم 
+                                                  +uptime  | لوقت البوت **`]
         let page = 1;
  
     let embed = new Discord.RichEmbed()
