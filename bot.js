@@ -44,7 +44,6 @@ client.on('message', message => {
                     +role | لاعطاء شخص  رتبه
                     +bc | برودكستات
                     +cc| لانشاء الوان
-                    +sr | لانشاء رومات
                     +cr | لانشاء رومات**`,`**🎶 Music Commands
                                    +play <name> | لتشغيل اغنيه
                                    +skip | لتخطي الاغنيه
@@ -1668,42 +1667,7 @@ message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم 
 
 
 
-client.on('message', message => {
-    if (message.content === "+sr") {
-    if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
-            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_CHANNELS`` **Premission**`);
-
-     message.guild.createChannel('❖ ⟶ PRAVATE 4⟵', 'voice')
-     message.guild.createChannel('❖ ⟶ PRAVATE 3⟵', 'voice')
-     message.guild.createChannel('❖ ⟶ PRAVATE 2⟵', 'voice')
-     message.guild.createChannel('❖ ⟶ PRAVATE 1⟵', 'voice')
-     message.guild.createChannel('═══ ␥ 『PRIVATE ROOMS』␥═══', 'gategory')
-     message.guild.createChannel('♪♪ Ↄ || MUSIC 「4」♬', 'voice')
-     message.guild.createChannel('♪♪ Ↄ || MUSIC 「3」♬', 'voice')
-     message.guild.createChannel('♪♪ Ↄ || MUSIC 「2」♬', 'voice')
-     message.guild.createChannel('♪♪ Ↄ || MUSIC 「1」♬', 'voice')
-     message.guild.createChannel('═══ ♪♪『MUSIC AREA 』♪♪═══', 'gategory')
-     message.guild.createChannel(' ➥ Rawagan ◰', 'voice')
-     message.guild.createChannel('➥ SawalF |سـوالـف. ◰', 'voice')
-     message.guild.createChannel('➥ PUBliC | عـأم.◰', 'voice')
-     message.guild.createChannel('═══ ␥ 『SWALF AREA』␥═══', 'gategory')
-     message.guild.createChannel('CUT', 'text')
-     message.guild.createChannel('BO7', 'text')    
-     message.guild.createChannel('PIC', 'text')
-     message.guild.createChannel('═════ ␥ 『OTHERS』␥═════', 'gategory')
-     message.guild.createChannel('bot', 'text')
-     message.guild.createChannel('chat', 'text')
-     message.guild.createChannel('═══ ␥ 『CHAT & BOTS 』␥═══', 'gategory')
-     message.guild.createChannel('warnings ', 'text')
-     message.guild.createChannel('NEWS', 'text')
-     message.guild.createChannel('INFO', 'text')
-     message.guild.createChannel('══ ␥ 『INFORAMATIONS』␥══ ', 'gategory')
-
-	    
-	    
-message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعة السيرفر**')
-}
-});
+;
 
 
 
