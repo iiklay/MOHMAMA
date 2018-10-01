@@ -1823,7 +1823,7 @@ message.channel.sendEmbed(cat);
 
 
 
-clien.on('message', message => {
+client.on('message', message => {
       if(message.content == '+قران1'){
         message.react('🔊')}  return;
   const ytdl = require('ytdl-core');
@@ -1842,7 +1842,7 @@ message.gulid.member(message.author).voiceChannel.join()
 .catch(console.error);
 });
 
-clien.on('messge', message => {
+client.on('messge', message => {
        if(message.content == '+قران2'){
            message.react('🔊')} return;
     const ytdl = require('ytdl-core');
