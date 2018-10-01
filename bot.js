@@ -1673,30 +1673,34 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_CHANNELS`` **Premission**`);
 
-        msg.guild.createChannel(args.join('اداره'), 'category');
-     message.guild.createChannel('「 O W N E R 」', 'voice')
-     message.guild.createChannel('「 C O - L E A D E R 」', 'voice')
-     message.guild.createChannel('「ADMINSTRATOR」', 'voice')
-     message.guild.createChannel('𖦲₁PARTY | بارتي𖦲', 'voice')
-     message.guild.createChannel('𖦲₂PARTY | بارتي𖦲', 'voice')
-     message.guild.createChannel('𖦲₂PARTY | بارتي𖦲', 'voice')
-     msg.guild.createChannel(args.join('صوت'), 'category');
-     message.guild.createChannel('✬ʝuşτ-1✬', 'voice')
-     message.guild.createChannel('✬ʝuşτ-3✬', 'voice')
-     message.guild.createChannel('✬ʝuşτ-4✬', 'voice')
-     message.guild.createChannel('✬ʝuşτ-5✬', 'voice')
-     message.guild.createChannel('😴sleep', 'voice')
-msg.guild.createChannel(args.join('شات'), 'category');
-     message.guild.createChannel('welcome', 'text')
-     message.guild.createChannel('info', 'text')
+     message.guild.createChannel('❖ ⟶ PRAVATE 4⟵', 'voice')
+     message.guild.createChannel('❖ ⟶ PRAVATE 3⟵', 'voice')
+     message.guild.createChannel('❖ ⟶ PRAVATE 2⟵', 'voice')
+     message.guild.createChannel('❖ ⟶ PRAVATE 1⟵', 'voice')
+     message.guild.createChannel('═══ ␥ 『PRIVATE ROOMS』␥═══', 'gategory')
+     message.guild.createChannel('♪♪ Ↄ || MUSIC 「4」♬', 'voice')
+     message.guild.createChannel('♪♪ Ↄ || MUSIC 「3」♬', 'voice')
+     message.guild.createChannel('♪♪ Ↄ || MUSIC 「2」♬', 'voice')
+     message.guild.createChannel('♪♪ Ↄ || MUSIC 「1」♬', 'voice')
+     message.guild.createChannel('═══ ♪♪『MUSIC AREA 』♪♪═══', 'gategory')
+     message.guild.createChannel(' ➥ Rawagan ◰', 'voice')
+     message.guild.createChannel('➥ SawalF |سـوالـف. ◰', 'voice')
+     message.guild.createChannel('➥ PUBliC | عـأم.◰', 'voice')
+     message.guild.createChannel('═══ ␥ 『SWALF AREA』␥═══', 'gategory')
+     message.guild.createChannel('CUT', 'text')
+     message.guild.createChannel('BO7', 'text')    
+     message.guild.createChannel('PIC', 'text')
+     message.guild.createChannel('═════ ␥ 『OTHERS』␥═════', 'gategory')
      message.guild.createChannel('bot', 'text')
      message.guild.createChannel('chat', 'text')
-     message.guild.createChannel('Youtube', 'text')
-     message.guild.createChannel('bo7', 'text')
-     message.guild.createChannel('party', 'text')
-     message.guild.createChannel('pic', 'text')
+     message.guild.createChannel('═══ ␥ 『CHAT & BOTS 』␥═══', 'gategory')
+     message.guild.createChannel('warnings ', 'text')
+     message.guild.createChannel('NEWS', 'text')
+     message.guild.createChannel('INFO', 'text')
+     message.guild.createChannel('══ ␥ 『INFORAMATIONS』␥══ ', 'gategory')
 
-
+	    
+	    
 message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعة السيرفر**')
 }
 });
