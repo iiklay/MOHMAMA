@@ -43,7 +43,9 @@ client.on('message', message => {
                     +move | لسحب شخص لعندك
                     +role | لاعطاء شخص  رتبه
                     +bc | برودكستات
-                    +cc | لانشاء الوان**`,`**🎶 Music Commands
+                    +cc| لانشاء الوان
+                    +sr | لانشاء رومات
+                    +cr | لانشاء رومات**`,`**🎶 Music Commands
                                    +play <name> | لتشغيل اغنيه
                                    +skip | لتخطي الاغنيه
                                    +vol <number> | لتعلية الصوت 100-1
@@ -1671,20 +1673,20 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**This Command Only For Servers !**')
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send(`**${message.author.username} You Dont Have** ``MANAGE_CHANNELS`` **Premission**`);
 
-        
+        msg.guild.createChannel(args.join('اداره'), 'category');
      message.guild.createChannel('「 O W N E R 」', 'voice')
      message.guild.createChannel('「 C O - L E A D E R 」', 'voice')
      message.guild.createChannel('「ADMINSTRATOR」', 'voice')
      message.guild.createChannel('𖦲₁PARTY | بارتي𖦲', 'voice')
      message.guild.createChannel('𖦲₂PARTY | بارتي𖦲', 'voice')
      message.guild.createChannel('𖦲₂PARTY | بارتي𖦲', 'voice')
+     msg.guild.createChannel(args.join('صوت'), 'category');
      message.guild.createChannel('✬ʝuşτ-1✬', 'voice')
- message.guild.createChannel('✬ʝuşτ-2✬', 'voice')
      message.guild.createChannel('✬ʝuşτ-3✬', 'voice')
      message.guild.createChannel('✬ʝuşτ-4✬', 'voice')
      message.guild.createChannel('✬ʝuşτ-5✬', 'voice')
      message.guild.createChannel('😴sleep', 'voice')
-          message.guild.createChannel('༆كَبّـآرَ آلَشّـخٌـصِـيّآتُ༆', 'voice')
+msg.guild.createChannel(args.join('شات'), 'category');
      message.guild.createChannel('welcome', 'text')
      message.guild.createChannel('info', 'text')
      message.guild.createChannel('bot', 'text')
