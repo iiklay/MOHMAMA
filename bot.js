@@ -64,7 +64,8 @@ client.on('message', message => {
                                                   +uptime  | لوقت البوت 
                                                   +رياضيات
                                                   +شقلب 
-                                                  +ركب**`]
+                                                  +ركب
+                                                  +لو خيروك**`]
         let page = 1;
  
     let embed = new Discord.RichEmbed()
