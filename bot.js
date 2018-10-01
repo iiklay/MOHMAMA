@@ -1717,7 +1717,6 @@ msg.channel.send(`${item.type}`).then(() => {
             userData.points++;
           })
           .catch(collected => {
-            message.channel.send(`🕓😀أنتهى الوقت أعد العب مرة آخرى😀🕓`);
           })
         })
     })
