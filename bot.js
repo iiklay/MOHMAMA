@@ -1731,6 +1731,75 @@ msg.channel.send(`${item.type}`).then(() => {
 
 
 
+              client.on('message', message => {
+                if (!points[message.author.id]) points[message.author.id] = {
+                  points: 0,
+                  };
+                if (message.content.startsWith(prefix + 'ركب')) {
+                  if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+                
+                const type = require('./gameselderbot/RKB.json');
+                const item = type[Math.floor(Math.random() * type.length)];
+                const filter = response => {
+                    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+                };
+                message.channel.send('**لديك 20 ثانيه لتركيب الكلمه**').then(msg => {
+                
+                      
+                msg.channel.send(`${item.type}`).then(() => {
+                        message.channel.awaitMessages(filter, { maxMatches: 1, time: 20000, errors: ['time'] })
+                        .then((collected) => {
+                    message.channel.send(`${collected.first().author} ✅ **احسنت لقد تمكنت من تركيب الكلمه بسرعه**`);
+                    console.log(`[Typing] ${collected.first().author} typed the word.`);
+                            let won = collected.first().author;
+                            points[won.id].points++;
+                          })
+                          .catch(collected => {
+                            message.channel.send(`:x: **لم يتمكن احد من تركيب الكلمه في الوقت المناسب**`);
+                      console.log('[Typing] Error: No one type the word.');
+                          })
+                    })
+                  })
+                }
+                });
+
+
+
+            
+            client.on('message', message => {
+            if (!points[message.author.id]) points[message.author.id] = {
+                points: 0,
+              };
+            if (message.content.startsWith(prefix + 'شقلب')) {
+                if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+            
+            const type = require('./gameselderbot/SHAKLEB.json');
+            const item = type[Math.floor(Math.random() * type.length)];
+            const filter = response => {
+                return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+            };
+            message.channel.send('**لديك 15 ثانيه لشقلبة الكلمه**').then(msg => {
+            
+                        
+            msg.channel.send(`${item.type}`).then(() => {
+                    message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+                    .then((collected) => {
+                    message.channel.send(`${collected.first().author} ✅ **احسنت,لقد تمكنت من شقلبة الكلمة في الوقت المناسب**`);
+                    console.log(`[Typing] ${collected.first().author} typed the word.`);
+                        let won = collected.first().author;
+                        points[won.id].points++;
+                      })
+                      .catch(collected => {
+                        message.channel.send(`:x: **لم يتمكن احد من شقلبة الكلمه في الوقت المناسب**`);
+                        console.log('[Typing] Error: No one type the word.');
+                      })
+                    })
+                })
+            }
+            });
+
+
+
 
 
 
