@@ -44,11 +44,11 @@ client.on('message', message => {
                     +role | لاعطاء شخص  رتبه
                     +bc | برودكستات
                     +cc | لانشاء الوان**`,`**🎶 Music Commands
-                                   +play <name>
-                                   +skip
-                                   +vol <number>
-                                   +puase
-                                   +resume**`,`**🤖 games and public
+                                   +play <name> | لتشغيل اغنيه
+                                   +skip | لتخطي الاغنيه
+                                   +vol <number> | لتعلية الصوت 100-1
+                                   +puase | توقف الاغنيه
+                                   +resume | لفتح الاغنيه من جديد**`,`**🤖 games and public
                                                   +مريم
                                                   +roll | قرعه
                                                   +عقاب
