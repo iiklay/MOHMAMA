@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const devs = ['427802430701436928'];
+const devs = ['525375324863594496'];
 const fs = require('fs');
 const stripIndents = require('common-tags').stripIndents;
 const child_process = require("child_process");
@@ -1818,7 +1818,6 @@ var rebel = ["https://f.top4top.net/p_682it2tg6.png","https://e.top4top.net/p_68
 message.channel.sendEmbed(cat);
     }
 });
-
 
 
 
